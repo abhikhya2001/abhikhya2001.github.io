@@ -7,5 +7,17 @@ author_profile: true
 
 {% include base_path %}
 
+<hr>
 
-
+{% for category in site.publication_category %}
+  {% assign cat = category[0] %}
+  {% assign cat_meta = category[1] %}
+  
+  {% assign posts = site.publications | where: "category", cat %}
+  {% if posts.size > 0 %}
+    <h2>{{ cat_meta.title }}</h2>
+    {% for post in posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
