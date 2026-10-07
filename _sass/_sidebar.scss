@@ -241,11 +241,6 @@
 
   li {
     white-space: nowrap;
-
-    @include breakpoint($large) {
-      white-space: normal;
-      overflow-wrap: anywhere;
-    }
   }
 
   a {
